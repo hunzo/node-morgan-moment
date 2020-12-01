@@ -5,7 +5,8 @@ const moment = require('moment-timezone')
 const app = ex()
 
 morgan.token('date', (req, res, tz) => {
-    return moment().tz(tz).format()
+    // return moment().tz(tz).format()
+    return moment().tz(tz).format('MM/DD/YYYY:HH:ss:mm Z')
 })
 
 morgan.format('myformat', '":remote-addr" - - [:date[Asia/Bangkok]] ":method :url" :status :res[content-length] - :response-time ms')
